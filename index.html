@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OVR — Artist Booking Agency</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav">
+    <img src="assets/img/logo.png" class="logo-img" alt="OVR Logo">
+    <nav>
+      <a href="#artists">Roster</a>
+      <a href="#">Agency</a>
+      <a href="#booking">Booking</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="hero-eyebrow">Artist Booking Agency</p>
+    <img src="assets/img/logo2.png" class="hero-logo" alt="OVR">
+    <div class="hero-divider"></div>
+    <p class="hero-tagline">Where the scene comes together.</p>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ARTISTS SECTION -->
+  <section id="artists" class="artists-section">
+
+    <div class="section-header">
+      <h2 class="section-title">Our Roster</h2>
+    </div>
+
+    <div class="artists">
+
+      <!-- Artist 1 -->
+      <div class="artist-card" onclick="openModal('AVEPARADISO')">
+        <img src="assets/img/AVEPARADISO_2.jpg" alt="AVEPARADISO">
+        <div class="artist-overlay">
+          <span class="artist-genre">Alternative · Electronic</span>
+          <h3>Aveparadiso</h3>
+          <span class="artist-cta">View Profile</span>
+        </div>
+      </div>
+
+      <!-- Artist 2 -->
+      <!-- Artist 2 -->
+      <div class="artist-card" onclick="openModal('KAFI')">
+        <img src="assets/img/KAFI_card.jpg" alt="KAFI">
+        <div class="artist-overlay">
+          <span class="artist-genre">Alt Rock · Indie Pop</span>
+          <h3>Kafi</h3>
+          <span class="artist-cta">View Profile</span>
+        </div>
+      </div>
+
+      <!-- Artist 3 -->
+      <div class="artist-card" onclick="openModal('KOKÔ CECÊ')">
+        <img src="assets/img/KOKO_CECE-02-UNIVERSA.jpg" alt="KOKÔ CECÊ">
+        <div class="artist-overlay">
+          <span class="artist-genre">Pop · R&B</span>
+          <h3>Kokô Cecê</h3>
+          <span class="artist-cta">View Profile</span>
+        </div>
+      </div>
+
+      <!-- Artist 3 -->
+      <div class="artist-card" onclick="openModal('MARTE')">
+        <img src="assets/img/Marte-Digital-HR_005.jpg" alt="MARTE">
+        <div class="artist-overlay">
+          <span class="artist-genre">Synth Pop · Indie Funk</span>
+          <h3>Marte</h3>
+          <span class="artist-cta">View Profile</span>
+        </div>
+      </div>
+
+      <!-- Artist 4 -->
+      <div class="artist-card" onclick="openModal('Solo Fernández')">
+        <img src="assets/img/SF1.jpg" alt="Solo Fernández">
+        <div class="artist-overlay">
+          <span class="artist-genre">Alternative Pop · Rock</span>
+          <h3>Solo Fernández</h3>
+          <span class="artist-cta">View Profile</span>
+        </div>
+      </div>
+
+      <!-- Artist 6 -->
+      <div class="artist-card" onclick="openModal('VENADO MERAKI')">
+        <img src="assets/img/VENADO_MERAKI.jpg" alt="VENADO MERAKI">
+        <div class="artist-overlay">
+          <span class="artist-genre">Indie Rock · Folk</span>
+          <h3>Venado Meraki</h3>
+          <span class="artist-cta">View Profile</span>
+        </div>
+      </div>
+
+      <!-- More artist cards go here -->
+
+    </div>
+
+  </section>
+
+  <!-- MODAL -->
+  <div id="modal" class="modal">
+    <div class="modal-panel">
+
+      <span onclick="closeModal()" class="close">&times;</span>
+
+      <div class="modal-left">
+        <img id="modalImg" src="" alt="">
+      </div>
+
+      <div class="modal-right">
+        <p class="modal-label">OVR Artist</p>
+        <h2 id="modalTitle"></h2>
+        <p id="modalOrigin" class="modal-origin"></p>
+        <div class="modal-divider"></div>
+        <p id="modalDescription" class="modal-description"></p>
+        <div id="modalSections"></div>
+        <div id="modalLinks" class="modal-links"></div>
+        <div class="booking-contact">
+          <h4>Booking Inquiries</h4>
+          <p>F. Moralva &nbsp;·&nbsp; OVR Agency</p>
+          <a href="mailto:soymoralva@gmail.com" class="booking-btn">Contact Agent →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- BOOKING SECTION -->
+  <section id="booking" class="booking-section">
+
+    <div class="section-header">
+      <h2 class="section-title">Book an Artist</h2>
+    </div>
+
+    <div class="booking-layout">
+
+      <div class="booking-intro">
+        <p class="booking-eyebrow">Work with us</p>
+        <h3 class="booking-heading">Let's make<br><em>something real.</em></h3>
+        <p class="booking-body">
+          Whether it's a festival headline, a private event, or a brand partnership —
+          tell us what you're building and we'll find the right artist for the moment.
+        </p>
+
+      </div>
+
+      <div class="booking-form-wrap">
+        <!-- Replace YOUR_ACCESS_KEY with your Web3Forms access key -->
+        <form id="bookingForm" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="bb0c4c24-d852-4908-9c05-1132f8dfda3e">
+          <input type="hidden" name="subject" value="New Booking Inquiry — OVR Agency">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="Jane Smith" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="jane@company.com" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="company">Company / Organization</label>
+              <input type="text" id="company" name="company" placeholder="Acme Events">
+            </div>
+            <div class="form-group">
+              <label for="artist">Artist of Interest</label>
+              <select id="artist" name="artist" required>
+                <option value="" disabled selected>Select an artist</option>
+                <option value="Solo Fernández">Solo Fernández</option>
+                <option value="VENADO MERAKI">VENADO MERAKI</option>
+                <option value="AVEPARADISO">AVEPARADISO</option>
+                <option value="KAFI">KAFI</option>
+                <option value="KOKÔ CECÊ">KOKÔ CECÊ</option>
+                <option value="MARTE">MARTE</option>
+                <option value="Any / Open">Any / Open to suggestions</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="event_type">Event Type</label>
+              <select id="event_type" name="event_type" required>
+                <option value="" disabled selected>Select event type</option>
+                <option value="Festival">Festival</option>
+                <option value="Concert">Concert / Show</option>
+                <option value="Private Event">Private Event</option>
+                <option value="Corporate">Corporate / Brand</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="event_date">Event Date</label>
+              <input type="date" id="event_date" name="event_date">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="budget">Estimated Budget</label>
+            <select id="budget" name="budget">
+              <option value="" disabled selected>Select a range</option>
+              <option value="Under $5K">Under $5,000</option>
+              <option value="$5K–$15K">$5,000 – $15,000</option>
+              <option value="$15K–$50K">$15,000 – $50,000</option>
+              <option value="$50K+">$50,000+</option>
+              <option value="To be discussed">Prefer to discuss</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Tell us about your event</label>
+            <textarea id="message" name="message" rows="5" placeholder="Location, audience size, vision, anything relevant…" required></textarea>
+          </div>
+
+          <div class="form-footer">
+            <p class="form-note">We typically respond within 48 hours.</p>
+            <button type="submit" class="submit-btn">
+              <span class="btn-text">Send Inquiry</span>
+              <span class="btn-arrow">→</span>
+            </button>
+          </div>
+
+        </form>
+
+        <!-- Success state -->
+        <div id="formSuccess" class="form-success" style="display:none;">
+          <div class="success-icon">✓</div>
+          <h4>Inquiry received.</h4>
+          <p>We'll be in touch within 48 hours.</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-left">We book talent. You create moments.</div>
+    <div class="footer-right">www.ovr.agency &nbsp;·&nbsp; @ovr.agency</div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
